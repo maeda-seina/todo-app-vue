@@ -39,7 +39,7 @@
           this.todos.splice(index, 1)
         }
       },
-      purge: function () {
+      clearDeleteTask: function () {
         if (!confirm('delete finished?')){
           return;
         }

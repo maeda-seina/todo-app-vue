@@ -22,10 +22,16 @@ body {
   padding: 2px;
 }
 
-.command {
+.deletecommand {
   font-size: 12px;
   cursor: pointer;
-  color: #08c;
+  color: red;
+}
+
+.editcommand {
+  font-size: 12px;
+  cursor: pointer;
+  color: green;
 }
 
 #app ul {
