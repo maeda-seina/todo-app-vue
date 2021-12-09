@@ -8,16 +8,16 @@
 <body>
 <div id="app" class="container">
   <h1>
-    <button v-on:click="clearDeleteTask">Clear finished task</button>
+    <button @click="clearDeleteTask">Clear finished task</button>
     My Todos
     <span class="info">({{remaining.length}}/{{todos.length}})</span>
   </h1>
   <ul>
     <li v-for="(todo, index) in todos">
       <input type="checkbox" v-model="todo.isDone">
-      <span v-bind:class="{done: todo.isDone}">{{todo.title}}</span>
-      <span v-on:click="deleteItem(index)" class="deletecommand">[×]</span>
-      <span v-on:click="edit(index)" class="editcommand">[✏]︎</span>
+      <span :class="{done: todo.isDone}">{{todo.title}}</span>
+      <span @click="deleteItem(index)" class="deletecommand">[×]</span>
+      <span @click="edit(index)" class="editcommand">[✏]︎</span>
     </li>
     <li v-show="!todos.length">
       Nothing to do
@@ -26,7 +26,7 @@
   <form>
     <input v-show="editIndex == -1" type="text" v-model="newItem">
     <input v-show="!(editIndex == -1)" type="text" v-model="newItem.title">
-    <span><button v-on:click="setItems">{{ changeButtonText }}</button></span>
+    <span><button @click="setItems">{{ changeButtonText }}</button></span>
     <span><button v-show="!(editIndex == -1)" v-on:click="cancel">Cancel</button></span>
   </form>
 </div>
