@@ -24,10 +24,14 @@ const appdata = {
           title: this.newItem,
           isDone: false
         }
-        this.todos.push(item);
-        this.newItem = '';
+        this.todos.push(item)
+        this.newItem = ''
       } else {
-        this.todos.splice(this.editIndex, 1, this.newItem)
+        const editItem = {
+          title: this.newItem,
+          isDone: false
+        }
+        this.todos.splice(this.editIndex, 1, editItem)
       }
       this.cancel()
     },
@@ -44,7 +48,7 @@ const appdata = {
     },
     edit (index) {
       this.editIndex = index
-      this.newItem = this.todos[index]
+      this.newItem = this.todos[index].title
     },
     cancel () {
       this.newItem = ""

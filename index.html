@@ -24,8 +24,7 @@
     </li>
   </ul>
   <form>
-    <input v-show="editIndex == -1" type="text" v-model="newItem">
-    <input v-show="!(editIndex == -1)" type="text" v-model="newItem.title">
+    <input type="text" v-model="newItem">
     <span><button @click="setItems">{{ changeButtonText }}</button></span>
     <span><button v-show="!(editIndex == -1)" v-on:click="cancel">Cancel</button></span>
   </form>
