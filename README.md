@@ -4,10 +4,10 @@ Vue.jsで作成したTodoアプリです。
 
 ## このアプリでできること
 ### ToDoの登録
-[![Image from Gyazo](https://i.gyazo.com/7f21b33e4ef778a77a2ad9e001c57a3f.gif)](https://gyazo.com/7f21b33e4ef778a77a2ad9e001c57a3f)
+[![Image from Gyazo](https://i.gyazo.com/52f3c315ae9382efe4e5dbb4cf396838.gif)](https://gyazo.com/52f3c315ae9382efe4e5dbb4cf396838)
 
 ### ToDoの編集
-[![Image from Gyazo](https://i.gyazo.com/a07fcc0049273634787982fe3fa58644.gif)](https://gyazo.com/a07fcc0049273634787982fe3fa58644)
+[![Image from Gyazo](https://i.gyazo.com/f647626b1b8f6d579a98af8ff60db3da.gif)](https://gyazo.com/f647626b1b8f6d579a98af8ff60db3da)
 
 ### ToDoの削除
-[![Image from Gyazo](https://i.gyazo.com/209a9357899c7e5a819758ac6f8bbbd6.gif)](https://gyazo.com/209a9357899c7e5a819758ac6f8bbbd6)
+[![Image from Gyazo](https://i.gyazo.com/290e29faa76277410b4a1cb7b0a8b276.gif)](https://gyazo.com/290e29faa76277410b4a1cb7b0a8b276)
