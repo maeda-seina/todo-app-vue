@@ -10,7 +10,7 @@
   <h1>
     <button @click="clearDeleteTask">Clear finished task</button>
     My Todos
-    <span class="info">({{remaining.length}}/{{todos.length}})</span>
+    <span class="info">{{ numberOfTasksRemaining }}</span>
   </h1>
   <ul>
     <li v-for="(todo, index) in todos">

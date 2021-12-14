@@ -66,6 +66,9 @@ const appdata = {
     },
     editStatus () {
       return this.editIndex !== -1
+    },
+    numberOfTasksRemaining () {
+      return `(${this.remaining.length}/${this.todos.length})`
     }
   }
 }
