@@ -1,5 +1,5 @@
 const appdata = {
-  data() {
+  data () {
     return {
       newItem: '',
       editIndex: -1,
@@ -14,11 +14,11 @@ const appdata = {
       deep: true
     }
   },
-  mounted: function () {
+  mounted () {
     this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   },
   methods: {
-    setItems: function () {
+    setItems () {
       if (this.editIndex === -1) {
         const item = {
           title: this.newItem,
@@ -31,33 +31,33 @@ const appdata = {
       }
       this.cancel()
     },
-    deleteItem: function (index) {
+    deleteItem (index) {
       if (confirm('are you sure?')) {
         this.todos.splice(index, 1)
       }
     },
-    clearDeleteTask: function () {
+    clearDeleteTask () {
       if (!confirm('delete finished?')) {
         return;
       }
       this.todos = this.remaining
     },
-    edit: function (index) {
+    edit (index) {
       this.editIndex = index
       this.newItem = this.todos[index]
     },
-    cancel: function () {
+    cancel () {
       this.newItem = ""
       this.editIndex = -1
     }
   },
   computed: {
-    remaining: function () {
+    remaining () {
       return this.todos.filter(function (todo) {
         return !todo.isDone
       })
     },
-    changeButtonText: function () {
+    changeButtonText () {
       return this.editIndex === -1 ? 'Add' : 'Update'
     }
   }
