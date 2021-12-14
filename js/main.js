@@ -49,7 +49,11 @@ const appdata = {
     cancel () {
       this.newItem = ""
       this.editIndex = -1
+    },
+    checked () {
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     }
+
   },
   computed: {
     remaining () {

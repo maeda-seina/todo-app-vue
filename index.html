@@ -14,7 +14,7 @@
   </h1>
   <ul>
     <li v-for="(todo, index) in todos">
-      <input type="checkbox" v-model="todo.isDone">
+      <input type="checkbox" v-model="todo.isDone" @change="checked">
       <span :class="{done: todo.isDone}">{{todo.title}}</span>
       <span @click="deleteItem(index)" class="deletecommand">[×]</span>
       <span @click="edit(index)" class="editcommand">[✏]︎</span>
