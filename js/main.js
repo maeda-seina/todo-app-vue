@@ -32,12 +32,12 @@ const appdata = {
       this.cancel()
     },
     deleteItem (index) {
-      if (confirm('are you sure?')) {
+      if (confirm('Are you sure?')) {
         this.todos.splice(index, 1)
       }
     },
     clearDeleteTask () {
-      if (!confirm('delete finished?')) {
+      if (!confirm('Delete finished?')) {
         return;
       }
       this.todos = this.remaining
