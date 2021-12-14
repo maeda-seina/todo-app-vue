@@ -11,7 +11,14 @@ const appdata = {
   },
   methods: {
     setItems () {
-      if (this.editIndex === -1) {
+      if (this.editStatus) {
+        const editItem = {
+          title: this.newItem,
+          isDone: false
+        }
+        this.todos.splice(this.editIndex, 1, editItem)
+        localStorage.setItem('todos', JSON.stringify(this.todos))
+      } else {
         const item = {
           title: this.newItem,
           isDone: false
@@ -19,13 +26,6 @@ const appdata = {
         this.todos.push(item)
         localStorage.setItem('todos', JSON.stringify(this.todos))
         this.newItem = ''
-      } else {
-        const editItem = {
-          title: this.newItem,
-          isDone: false
-        }
-        this.todos.splice(this.editIndex, 1, editItem)
-        localStorage.setItem('todos', JSON.stringify(this.todos))
       }
       this.cancel()
     },
@@ -62,7 +62,10 @@ const appdata = {
       })
     },
     changeButtonText () {
-      return this.editIndex === -1 ? 'Add' : 'Update'
+      return this.editStatus ? 'Update' : 'Add'
+    },
+    editStatus () {
+      return this.editIndex !== -1
     }
   }
 }
