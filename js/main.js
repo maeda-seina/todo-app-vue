@@ -6,14 +6,6 @@ const appdata = {
       todos: []
     }
   },
-  watch: {
-    todos: {
-      handler: function () {
-        localStorage.setItem('todos', JSON.stringify(this.todos))
-      },
-      deep: true
-    }
-  },
   mounted () {
     this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   },
@@ -25,6 +17,7 @@ const appdata = {
           isDone: false
         }
         this.todos.push(item)
+        localStorage.setItem('todos', JSON.stringify(this.todos))
         this.newItem = ''
       } else {
         const editItem = {
@@ -32,12 +25,14 @@ const appdata = {
           isDone: false
         }
         this.todos.splice(this.editIndex, 1, editItem)
+        localStorage.setItem('todos', JSON.stringify(this.todos))
       }
       this.cancel()
     },
     deleteItem (index) {
       if (confirm('Are you sure?')) {
         this.todos.splice(index, 1)
+        localStorage.setItem('todos', JSON.stringify(this.todos))
       }
     },
     clearDeleteTask () {
@@ -45,6 +40,7 @@ const appdata = {
         return;
       }
       this.todos = this.remaining
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     },
     edit (index) {
       this.editIndex = index
@@ -66,5 +62,5 @@ const appdata = {
     }
   }
 }
-let app = Vue.createApp(appdata)
+const app = Vue.createApp(appdata)
 app.mount('#app')

@@ -25,8 +25,8 @@
   </ul>
   <form>
     <input type="text" v-model="newItem">
-    <span><button @click="setItems">{{ changeButtonText }}</button></span>
-    <span><button v-show="!(editIndex == -1)" v-on:click="cancel">Cancel</button></span>
+    <span><button @click.prevent="setItems">{{ changeButtonText }}</button></span>
+    <span><button v-show="!(editIndex == -1)" @click="cancel">Cancel</button></span>
   </form>
 </div>
 <script src="https://unpkg.com/vue@next"></script>
